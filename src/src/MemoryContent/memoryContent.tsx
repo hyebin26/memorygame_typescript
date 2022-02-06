@@ -1,7 +1,13 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import styled from "styled-components";
 
-const MemoryContent = ({ contentId }: { contentId: number }) => {
+const MemoryContent = ({
+  contentId,
+  current,
+}: {
+  contentId: number;
+  current: null | number;
+}) => {
   let 기울기 = "";
   if (contentId === 0 || contentId === 3 || contentId === 6) {
     기울기 = "기울기";
@@ -9,7 +15,22 @@ const MemoryContent = ({ contentId }: { contentId: number }) => {
   if (contentId === 1 || contentId === 4 || contentId === 7) {
     기울기 = "살짝기울기";
   }
-  return <Content shape={기울기}></Content>;
+  const clickContent = (e: MouseEvent) => {
+    if (e !== null && e.target instanceof HTMLElement) {
+      if (current && contentId === current) {
+        const element = e.target;
+        const dataCurrent = element.dataset.current;
+      }
+    }
+  };
+
+  return (
+    <Content
+      shape={기울기}
+      onClick={clickContent}
+      data-current={false}
+    ></Content>
+  );
 };
 
 const Content = styled.li<{ shape: string }>`
