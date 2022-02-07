@@ -1,13 +1,18 @@
-import React, { MouseEvent } from "react";
-import styled from "styled-components";
+import React, { MouseEvent, useState } from "react";
+import styled, { css, keyframes } from "styled-components";
+
+type MemoryContentType = {
+  contentId: number;
+  current: null | number | undefined;
+  onClickContent: (id: number) => void;
+};
 
 const MemoryContent = ({
   contentId,
   current,
-}: {
-  contentId: number;
-  current: null | number;
-}) => {
+  onClickContent,
+}: MemoryContentType) => {
+  const [clicked, setClicked] = useState(false);
   let 기울기 = "";
   if (contentId === 0 || contentId === 3 || contentId === 6) {
     기울기 = "기울기";
@@ -17,28 +22,48 @@ const MemoryContent = ({
   }
   const clickContent = (e: MouseEvent) => {
     if (e !== null && e.target instanceof HTMLElement) {
-      if (current && contentId === current) {
-        const element = e.target;
-        const dataCurrent = element.dataset.current;
-      }
+      onClickContent(contentId);
+      setClicked(true);
     }
   };
-
   return (
     <Content
       shape={기울기}
       onClick={clickContent}
-      data-current={false}
+      data-target={current === contentId ? "true" : "false"}
+      data-click={clicked}
     ></Content>
   );
 };
 
-const Content = styled.li<{ shape: string }>`
+const changeColor = keyframes`
+  0% {
+    background:#00000061;
+  }
+  100%{
+    background:white;
+  }
+`;
+
+const Content = styled.li<{
+  shape: string;
+  "data-target": string;
+  "data-click": boolean;
+}>`
   width: 150px;
   height: 150px;
   list-style: none;
   border: 1px solid #00000061;
   margin: 1rem 0;
+  transition: 0.2s;
+  cursor: pointer;
+
+  ${(props) =>
+    props["data-target"] === "true"
+      ? css`
+          animation: ${changeColor} 1s;
+        `
+      : ""};
   ${(props) => (props.shape === "기울기" ? "transform: skew(-6deg);" : "")};
   ${(props) => (props.shape === "살짝기울기" ? "transform: skew(3deg);" : "")}
 `;
