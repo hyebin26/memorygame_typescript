@@ -1,3 +1,5 @@
+1. 맞췄을경우, 틀렸을 경우 이벤트
+
 https://stackoverflow.com/questions/49631688/property-dataset-does-not-exist-on-type-eventtarget
 
 https://stackoverflow.com/questions/67612502/property-dataset-does-not-exist-on-type-eventtarget-when-i-apply-dataset-to

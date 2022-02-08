@@ -41,12 +41,23 @@ const MemoryContent = ({
   );
 };
 
+const rotate = keyframes`
+ 0%{
+   transform: rotate(0);
+   background:white;
+ }
+ 100%{
+  transform:rotate(360deg);
+  background:black;
+ }
+`;
+
 const changeColor = keyframes`
     0%{
         background:grey;
     }
     100%{
-        background:white;
+        background:black;
     }
 `;
 
@@ -55,25 +66,32 @@ const clickColor = keyframes`
     background:grey;
 }
 100%{
-    background:white;
+    background:black;
 }
 `;
 
 const Content = styled.li<StyledContent>`
   width: 170px;
   height: 150px;
-  border: 1px solid black;
+  border: 1px solid white;
   margin: 1rem 0;
+  cursor: pointer;
   ${(props) =>
     props.clicked
       ? css`
-          animation: ${clickColor} 0.5s linear;
+          animation: ${clickColor} 0.3s linear;
+        `
+      : ""};
+  ${(props) =>
+    props.clicked && props.기울기 === "사각형"
+      ? css`
+          animation: ${rotate} 0.3s linear;
         `
       : ""};
   ${(props) =>
     props.target
       ? css`
-          animation: ${changeColor} 0.5s linear;
+          animation: ${changeColor} 0.7s linear;
         `
       : ""};
   ${(props) =>

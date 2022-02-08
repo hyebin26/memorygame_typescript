@@ -11,3 +11,8 @@ li {
 a {
   text-decoration: none;
 }
+
+body {
+  background: black;
+  color: white;
+}
