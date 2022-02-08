@@ -1,11 +1,11 @@
 import React from "react";
-import Memory from "./src/memory/memory";
+import Memory from "./src/Memory/memory";
 
 function App() {
   return (
-    <div>
+    <>
       <Memory />
-    </div>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from "react";
+import React, { MouseEvent, useEffect, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 
 type MemoryContentType = {
@@ -7,31 +7,36 @@ type MemoryContentType = {
   onClickContent: (id: number) => void;
 };
 
+type ContentLI = {
+  shape: string;
+  target: boolean;
+  active: boolean;
+};
+
 const MemoryContent = ({
   contentId,
   current,
   onClickContent,
 }: MemoryContentType) => {
-  const [clicked, setClicked] = useState(false);
-  let 기울기 = "";
+  const [active, setActive] = useState(false);
+  const 기울기 = useRef("사각형");
   if (contentId === 0 || contentId === 3 || contentId === 6) {
-    기울기 = "기울기";
+    기울기.current = "기울기";
   }
   if (contentId === 1 || contentId === 4 || contentId === 7) {
-    기울기 = "살짝기울기";
+    기울기.current = "살짝기울기";
   }
   const clickContent = (e: MouseEvent) => {
-    if (e !== null && e.target instanceof HTMLElement) {
-      onClickContent(contentId);
-      setClicked(true);
-    }
+    onClickContent(contentId);
+    setActive(true);
   };
+
   return (
     <Content
-      shape={기울기}
+      shape={기울기.current}
       onClick={clickContent}
-      data-target={current === contentId ? "true" : "false"}
-      data-click={clicked}
+      target={current === contentId ? true : false}
+      active={active}
     ></Content>
   );
 };
@@ -45,11 +50,16 @@ const changeColor = keyframes`
   }
 `;
 
-const Content = styled.li<{
-  shape: string;
-  "data-target": string;
-  "data-click": boolean;
-}>`
+const clickColor = keyframes`
+0% {
+  background:#00000061;
+}
+100%{
+  background:white;
+}
+`;
+
+const Content = styled.li<ContentLI>`
   width: 150px;
   height: 150px;
   list-style: none;
@@ -57,9 +67,14 @@ const Content = styled.li<{
   margin: 1rem 0;
   transition: 0.2s;
   cursor: pointer;
-
   ${(props) =>
-    props["data-target"] === "true"
+    props.active
+      ? css`
+          animation: ${clickColor} 1s;
+        `
+      : ""}
+  ${(props) =>
+    props.target
       ? css`
           animation: ${changeColor} 1s;
         `

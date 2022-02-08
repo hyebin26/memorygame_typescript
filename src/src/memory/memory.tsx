@@ -69,7 +69,7 @@ const Memory = () => {
           <MemoryContent
             key={idx}
             contentId={idx}
-            current={current === null ? null : current}
+            current={current}
             onClickContent={onClickContent}
           />
         ))}
