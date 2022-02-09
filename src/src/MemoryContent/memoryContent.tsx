@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import styled, { css, keyframes } from "styled-components";
 
 type ContentType = {
@@ -24,7 +24,7 @@ const MemoryContent = ({
   onHandleEndAnimation,
   target,
 }: ContentType) => {
-  const clickContent = (e: React.MouseEvent<HTMLElement>) => {
+  const clickContent = () => {
     onClickContent(contentId);
   };
   const handleEndAnimation = () => {

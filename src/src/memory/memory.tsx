@@ -66,6 +66,8 @@ const Memory = () => {
     setMemory(content);
   };
   const onClickStartBtn = () => {
+    const audio = new Audio("./sound/MP_Tiny Button Push.mp3");
+    audio.play();
     handleGaming();
   };
   const handleGaming = () => {
@@ -121,7 +123,6 @@ const MemorySection = styled.section`
   z-index: 999;
   margin: 2rem auto;
   button {
-    margin: 1rem 0;
     background: blue;
     color: white;
     border: none;
@@ -129,6 +130,10 @@ const MemorySection = styled.section`
     font-size: 1.1rem;
     border-radius: 8px;
     cursor: pointer;
+  }
+  h2 {
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
   }
   @media screen and (max-width: 650px) {
     max-width: 400px;
