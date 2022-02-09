@@ -118,6 +118,7 @@ const Memory = () => {
 
 const MemorySection = styled.section`
   max-width: 600px;
+  z-index: 999;
   margin: 2rem auto;
   button {
     margin: 1rem 0;
@@ -128,6 +129,12 @@ const MemorySection = styled.section`
     font-size: 1.1rem;
     border-radius: 8px;
     cursor: pointer;
+  }
+  @media screen and (max-width: 650px) {
+    max-width: 400px;
+    h2 {
+      font-size: 1.1rem;
+    }
   }
 `;
 

@@ -76,6 +76,11 @@ const Content = styled.li<StyledContent>`
   border: 1px solid white;
   margin: 1rem 0;
   cursor: pointer;
+}
+  @media screen and (max-width: 650px) {
+  width: 110px;
+  height:100px;
+  }
   ${(props) =>
     props.clicked
       ? css`
@@ -85,7 +90,7 @@ const Content = styled.li<StyledContent>`
   ${(props) =>
     props.clicked && props.기울기 === "사각형"
       ? css`
-          animation: ${rotate} 0.3s linear;
+          animation: ${rotate} 0.5s linear;
         `
       : ""};
   ${(props) =>

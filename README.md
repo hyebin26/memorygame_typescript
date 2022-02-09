@@ -1,4 +1,7 @@
-1. 맞췄을경우, 틀렸을 경우 이벤트
+1. 눈내리기 이벤트
+2. 리팩토링
+3. 블로그 작성
+4. 아토믹 패턴 공부
 
 https://stackoverflow.com/questions/49631688/property-dataset-does-not-exist-on-type-eventtarget
 
