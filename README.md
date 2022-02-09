@@ -8,7 +8,7 @@
 - Typescript
 - Styled-components
 
-![ezgif.com-gif-maker (2).gif](<https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f5d36d16-cc00-4075-95a1-1967d0674a34/ezgif.com-gif-maker_(2).gif>)
+![](https://images.velog.io/images/hyebin/post/43430200-093e-408c-874f-23f1f646ef24/ezgif.com-gif-maker%20(2).gif)
 
 구현한 모습입니다. 글을 보고 똑같이 구현하고 허전한 것 같아서 색을 변경하고 변경한 김에 애니메이션 추가를 고민하다가 겨울이니까 눈내리는 애니메이션도 구현했습니다.
 
