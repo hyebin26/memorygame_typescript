@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css, keyframes } from "styled-components";
 
-type ContentType = {
+type PropsType = {
   기울기: string;
   contentId: number;
   clicked: boolean;
@@ -10,7 +10,7 @@ type ContentType = {
   target: boolean;
 };
 
-type StyledContent = {
+type StyledType = {
   기울기: string;
   clicked: boolean;
   target: boolean;
@@ -23,7 +23,7 @@ const MemoryContent = ({
   onClickContent,
   onHandleEndAnimation,
   target,
-}: ContentType) => {
+}: PropsType) => {
   const clickContent = () => {
     onClickContent(contentId);
   };
@@ -70,7 +70,7 @@ const clickColor = keyframes`
 }
 `;
 
-const Content = styled.li<StyledContent>`
+const Content = styled.li<StyledType>`
   width: 170px;
   height: 150px;
   border: 1px solid white;

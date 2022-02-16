@@ -47,5 +47,16 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.21"
   },
-  "homepage": "https://hyebin26.github.io/memorygame_typescript/"
+  "homepage": "https://hyebin26.github.io/memorygame_typescript/",
+  "description": "<a href=\"https://velog.io/@teo/2021-%EC%9B%B9-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B3%B5%EB%B6%80%EB%B2%95-%EC%9E%85%EB%AC%B8%EC%9E%90%ED%8E%B8-%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC\">웹 프론트엔드 공부법-teo.log</a>의 메모리게임을 리액트와 타입스크립트를 이용해서 만들었습니다.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyebin26/memorygame_typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyebin26/memorygame_typescript/issues"
+  }
 }

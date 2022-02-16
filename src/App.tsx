@@ -1,6 +1,6 @@
 import React from "react";
-import Memory from "./src/Memory/memory";
-import FallingSnow from "./src/Snow/Snow";
+import Memory from "./components/Memory/Memory";
+import FallingSnow from "./components/Snow/Snow";
 
 function App() {
   return (

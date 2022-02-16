@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MemoryContent from "../MemoryContent/memoryContent";
-import { content } from "./content";
+import MemoryContent from "../MemoryContent/MemoryContent";
+import { content } from "./content.js";
 
 function getRandomArbitrary(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
